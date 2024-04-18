@@ -14,6 +14,11 @@ public class Main {
 		int id;
 		int a = 1;
 		
+		record.values();
+		System.out.println("ID " + " : EMPLOYEE");
+		record.printEmployees();
+		System.out.println();
+		
 		System.out.println("-------ATTENDANCE TRACKER-------");
 		
 		while(a==1)
@@ -23,8 +28,9 @@ public class Main {
 			System.out.println("Case 2: Append Attendance");
 			System.out.println("Case 3: Check Attendance");
 			System.out.println("Case 4: Retrieve Attendance");
+			System.out.println("Case 5: Add Employee in Employee List");
+			System.out.println("Case 6: View Employee List");
 			System.out.println("Case 0: Exit");
-			System.out.println();
 			System.out.println("Enter your choice : ");
 			
 			int choice = sc.nextInt();
@@ -77,6 +83,23 @@ public class Main {
 					System.out.println("Enter Date in DDMMYYYY format for which you want to retrieve attendance: ");
 					date = sc.next();
 					record.retrieveAttendance(date);
+					break;
+					
+				case 5:
+					System.out.println();
+					System.out.println("----Case 5----");
+					System.out.println("Enter ID of the Employee");
+					id = sc.nextInt();
+					System.out.println("Enter name of the Employee");
+					String name = sc.next();
+					record.addEmployee(id, name);
+					break;
+					
+				case 6:
+					System.out.println();
+					System.out.println("----Case 6----");
+					System.out.println("ID " + " : EMPLOYEE");
+					record.printEmployees();
 					break;
 					
 				case 0:
